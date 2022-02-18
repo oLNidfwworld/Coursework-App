@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Banks"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1480"
+        Title="MainWindow" Height="940" Width="1480"
         WindowStyle="None"
         ResizeMode="CanResize"
         AllowsTransparency="True"
         MouseLeftButtonDown="Window_MouseLeftButtonDown"
         Background="Transparent"
-        
+        Loaded="Window_Loaded"
         >
-    <Border Background="LightGreen" CornerRadius="100" BorderThickness="10" >
+    <Border Style="{StaticResource MainBorderStyle}" Background="LightGreen" BorderThickness="10" >
+        
         <Border.BorderBrush>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FF10BB10" Offset="0.3"/>
@@ -25,20 +26,20 @@
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
-            <Border Grid.Row="0"  Background="#FF10BB10">
+            <Border Style="{StaticResource MainBorderStyle}" Grid.Row="0"  Background="#FF10BB10">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
                     <Image Source="C:\Users\Админ\source\repos\Banks\Banks\Resources\sber.jpeg" Height=" 100" Width="100"></Image>
                     <TextBlock Style="{StaticResource HeaderText}" Text="Сбер" ></TextBlock>
                 </StackPanel>
             </Border>
-            <Border Grid.Row="1" BorderThickness="10">
+            <Border Style="{StaticResource MainBorderStyle}" Grid.Row="1" BorderThickness="5">
                 <Border.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="LightGreen" Offset="0.3"/>
-                        <GradientStop Color="#FF10BB10" Offset="1"/>
+                        <GradientStop Color="#FF10BB10" Offset="0.5"/>
                     </LinearGradientBrush>
                 </Border.BorderBrush>
-                <Frame x:Name="MainFrame">
+                <Frame x:Name="MainFrame" Margin="0">
                     
                 </Frame>
             </Border>

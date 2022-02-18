@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Banks.Clasess;
+using Banks.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +33,13 @@ namespace Banks
             {
                 this.DragMove();
             }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            MainFrameModel.thisframe = MainFrame;
+            MainFrameModel.thisframe.Navigate(new LoginPage());
         }
     }
 }
