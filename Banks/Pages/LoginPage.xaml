@@ -4,8 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Banks.Pages"
+      xmlns:main ="clr-namespace:Banks"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
       Title="LoginPage">
 
     <Grid >
@@ -26,12 +26,10 @@
                     <DockPanel  MinWidth="500" MaxWidth="500"  >
                         <TextBlock DockPanel.Dock="Left">Пароль:</TextBlock>
                         <TextBox MaxLines="1" MaxWidth="300" DockPanel.Dock="Right"></TextBox>
-                        
+
                     </DockPanel>
                 </Border>
-                <Button Width="317">
-                    Войти
-                </Button>
+                <Button Content="Войти" Width="357" Click="Button_Click" />
             </StackPanel>
 
         </Border>

@@ -23,6 +23,12 @@ namespace Banks.Pages
         public LoginPage()
         {
             InitializeComponent();
+            
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("ЬЫП");
         }
     }
 }

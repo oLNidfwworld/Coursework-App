@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Banks"
         mc:Ignorable="d"
-        Title="MainWindow" Height="940" Width="1480"
+        Title="Банкоматы" Height="940" Width="1480"
         WindowStyle="None"
         ResizeMode="CanResize"
         AllowsTransparency="True"

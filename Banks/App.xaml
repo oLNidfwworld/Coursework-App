@@ -8,14 +8,15 @@
         <FontFamily x:Key="Ubuntu">./Resources/Ubuntu-Regular.ttf#Ubuntu</FontFamily>
 
         
-        
+        <!-- Стиль текста заголовка-->
         <Style x:Key="HeaderText" TargetType="TextBlock">
             <Setter Property="FontFamily" Value="{StaticResource Ubuntu}"></Setter>
             <Setter Property="FontStyle" Value="Italic"></Setter>
             <Setter Property="Foreground" Value="White" ></Setter>
             <Setter Property="FontSize" Value="100" ></Setter>
         </Style>
-
+        
+        <!-- Стандартный текст-->
         <Style  TargetType="TextBlock" BasedOn="{StaticResource HeaderText}">
 
             <Setter Property="FontSize" Value="50"></Setter>
@@ -24,6 +25,7 @@
 
         </Style>
 
+        <!-- Стиль текстбокса-->
         <Style TargetType="TextBox" >
 
             <Setter Property="FontFamily" Value="{StaticResource Ubuntu}"></Setter>
@@ -39,7 +41,25 @@
             <Setter Property="Background" Value="Transparent"></Setter>
         </Style>
 
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="10"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+                
+            </Setter>
+            <Setter Property="Background" Value="#FF10BB10"></Setter>
+        </Style>
 
+        <!-- Стиль главных бордеров-->
         <Style x:Key="MainBorderStyle" TargetType="Border">
 
             <Setter Property="CornerRadius" Value="100"></Setter>
@@ -47,13 +67,19 @@
             <Setter Property="BorderThickness" Value="10"></Setter>
         </Style>
 
+        <!-- Стиль обрамлений элементов-->
         <Style x:Key="ItemsBorderStyle" TargetType="Border" BasedOn="{StaticResource MainBorderStyle}">
 
             <Setter Property="CornerRadius" Value="15"></Setter>
             <Setter Property="Background" Value="#FF10BB10"> </Setter>
             <Setter Property="BorderThickness" Value="0"></Setter>
         </Style>
-
+        
+        <!-- Стиль страницы-->
+        <Style TargetType="Page">
+            <Setter Property="Width" Value="1410"></Setter>
+            <Setter Property="Height" Value="645"></Setter>
+        </Style>
 
     </Application.Resources>
 </Application>
