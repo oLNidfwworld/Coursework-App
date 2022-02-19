@@ -37,6 +37,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=2.0.4.3, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.2.0.4\lib\net452\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -44,7 +50,10 @@
       <HintPath>..\packages\MaterialDesignThemes.4.3.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -72,6 +81,36 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Clasess\MainFrameModel.cs" />
+    <Compile Include="Database\Bank.cs">
+      <DependentUpon>BanksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\BanksModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BanksModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\BanksModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BanksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\BanksModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BanksModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Clients.cs">
+      <DependentUpon>BanksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Operation.cs">
+      <DependentUpon>BanksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\sysdiagrams.cs">
+      <DependentUpon>BanksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Terminals.cs">
+      <DependentUpon>BanksModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -102,6 +141,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Database\BanksModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BanksModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Database\BanksModel.edmx.diagram">
+      <DependentUpon>BanksModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -113,7 +159,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database\BanksModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BanksModel.Context.cs</LastGenOutput>
+      <DependentUpon>BanksModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Database\BanksModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BanksModel.edmx</DependentUpon>
+      <LastGenOutput>BanksModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Resources\sber.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets')" />
