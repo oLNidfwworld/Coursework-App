@@ -30,5 +30,14 @@ namespace Banks.Pages
         {
             MessageBox.Show("ЬЫП");
         }
+
+        private void Button_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            
+        }
+
+        private void ent_MouseEnter(object sender, MouseEventArgs e)
+        {
+        }
     }
 }

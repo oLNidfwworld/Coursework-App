@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:md ="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:Banks.Pages"
       xmlns:main ="clr-namespace:Banks"
       mc:Ignorable="d" 
@@ -10,7 +11,7 @@
 
     <Grid >
 
-        <Border Style="{StaticResource MainBorderStyle}" Margin="0" BorderThickness="0" >
+        <Border Style="{StaticResource MainBorderStyle}"  >
             
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Border Style="{StaticResource ItemsBorderStyle}" >
@@ -19,17 +20,17 @@
                 <Border  Style="{StaticResource ItemsBorderStyle}" >
                     <DockPanel MinWidth="500" MaxWidth="500"  >
                         <TextBlock DockPanel.Dock="Left">Логин:</TextBlock>
-                        <TextBox DockPanel.Dock="Right" MaxWidth="300" ></TextBox>
+                        <TextBox DockPanel.Dock="Right" MaxWidth="300" md:HintAssist.Hint="asdasd"></TextBox>
                     </DockPanel>
                 </Border>
                 <Border  Style="{StaticResource ItemsBorderStyle}" >
                     <DockPanel  MinWidth="500" MaxWidth="500"  >
                         <TextBlock DockPanel.Dock="Left">Пароль:</TextBlock>
-                        <TextBox MaxLines="1" MaxWidth="300" DockPanel.Dock="Right"></TextBox>
+                        <TextBox MaxLines="1" MaxWidth="300" DockPanel.Dock="Right" ></TextBox>
 
                     </DockPanel>
                 </Border>
-                <Button Content="Войти" Width="357" Click="Button_Click" />
+                <Button Content="Войти" Width="357"/>
             </StackPanel>
 
         </Border>
