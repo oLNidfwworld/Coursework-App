@@ -27,10 +27,20 @@
                 <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
             <Border Style="{StaticResource HeaderBorderStyle}" Grid.Row="0"  Background="#FF10BB10" >
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                    <Image Source="C:\Users\Админ\source\repos\Banks\Banks\Resources\sber.jpeg" Height=" 100" Width="100"></Image>
-                    <TextBlock Style="{StaticResource HeaderText}" Text="Сбер" ></TextBlock>
-                </StackPanel>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"></RowDefinition>
+                        <RowDefinition Height="4*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <TextBlock Margin="48,31,833,0">Номер терминала:12312315</TextBlock>
+                        <Button Content="Закончить обслуживание" Margin="868,11,55,10" Click="Button_Click"></Button>
+                    </Grid>
+                    <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                        <Image Source="C:\Users\Админ\source\repos\Banks\Banks\Resources\sber.jpeg" Height=" 100" Width="100"></Image>
+                        <TextBlock Style="{StaticResource HeaderText}" Text="Сбер" ></TextBlock>
+                    </StackPanel>
+                </Grid>
             </Border>
             <Border Style="{StaticResource MainBorderStyle}" Grid.Row="1" BorderThickness="5">
                 <Border.BorderBrush>

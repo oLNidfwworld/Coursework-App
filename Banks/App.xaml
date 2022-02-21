@@ -19,7 +19,7 @@
         <!-- Стандартный текст-->
         <Style  TargetType="TextBlock" BasedOn="{StaticResource HeaderText}">
 
-            <Setter Property="FontSize" Value="50"></Setter>
+            <Setter Property="FontSize" Value="40"></Setter>
             <Setter Property="FontStyle" Value="Normal"></Setter>
             <Setter Property="Margin" Value="10"></Setter>
 
