@@ -31,6 +31,9 @@
                     </DockPanel>
                 </Border>
                 <Button Content="Войти" Width="357"/>
+                <Button Width="414" >
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Зарегистрировать <LineBreak/> карту</TextBlock>
+                </Button>
             </StackPanel>
 
         </Border>

@@ -16,29 +16,30 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="5*"></ColumnDefinition>
                     <ColumnDefinition Width="5*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-
+                <TextBlock x:Name="helloPrint" Grid.ColumnSpan="2">Здравствуйте!</TextBlock>
                 
-                <Button Grid.Column="0" Grid.Row="0"  >
+                <Button Grid.Column="0" Grid.Row="1"  >
                     <TextBlock>История транзакций</TextBlock>
                 </Button>
-                <Button Grid.Column="1" Grid.Row="0">
+                <Button Grid.Column="1" Grid.Row="1">
                     <TextBlock>Оформить карту банка</TextBlock>
                 </Button>
-                <Button Grid.Column="0" Grid.Row="1">
+                <Button Grid.Column="0" Grid.Row="2">
                     <TextBlock>Перевести/оплатить</TextBlock>
                 </Button>
-                <Button Grid.Column="1" Grid.Row="1">
+                <Button Grid.Column="1" Grid.Row="2">
                     <TextBlock>Снять наличные</TextBlock>
                 </Button>
-                <Button Grid.Column="0" Grid.Row="2">
+                <Button Grid.Column="0" Grid.Row="3">
                     <TextBlock>Посмотреть баланс</TextBlock>
                 </Button>
-                <Button Grid.Column="1" Grid.Row="2">
+                <Button Grid.Column="1" Grid.Row="3">
                     <TextBlock>Инфо</TextBlock>
                 </Button>
 
