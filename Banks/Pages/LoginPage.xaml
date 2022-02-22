@@ -35,7 +35,7 @@
                 <Button Width="414" Click="Button_Click_1">
                     <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Зарегистрировать <LineBreak/> карту</TextBlock>
                 </Button>
-                <Popup x:Name="wariningPopup" StaysOpen="False" Placement="Mouse" MaxWidth="400" AllowsTransparency="True" >
+                <Popup x:Name="warningPopup" StaysOpen="False" Placement="Mouse" MaxWidth="400" AllowsTransparency="True" >
                     <Border Style="{StaticResource PopupItemBorderStyle}">
                         <TextBlock Style="{StaticResource PopupTextBlock}">Неправильный логин или пароль</TextBlock>
                     </Border>

@@ -30,7 +30,7 @@ namespace Banks.Pages
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            wariningPopup.IsOpen = true;
+            warningPopup.IsOpen = true;
         }
     }
 }
