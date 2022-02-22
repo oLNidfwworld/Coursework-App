@@ -20,7 +20,14 @@
                 <Border  Style="{StaticResource ItemsBorderStyle}" >
                     <DockPanel MinWidth="500" MaxWidth="500"  >
                         <TextBlock DockPanel.Dock="Left">Логин:</TextBlock>
-                        <TextBox DockPanel.Dock="Right" MaxWidth="300" md:HintAssist.Hint="asdasd"></TextBox>
+                        <TextBox DockPanel.Dock="Right" MaxWidth="300" md:HintAssist.Hint="asdasd">
+                            <TextBox.ToolTip>
+                                <ToolTip Background="Transparent">
+                                    <TextBlock>Dick</TextBlock>
+                                </ToolTip>
+                            </TextBox.ToolTip>
+                        </TextBox>
+                        
                     </DockPanel>
                 </Border>
                 <Border  Style="{StaticResource ItemsBorderStyle}" >
@@ -31,9 +38,15 @@
                     </DockPanel>
                 </Border>
                 <Button Content="Войти" Width="357"/>
-                <Button Width="414" >
+                <Button Width="414" Click="Button_Click_1">
                     <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Зарегистрировать <LineBreak/> карту</TextBlock>
                 </Button>
+                <Popup x:Name="wariningPopup" StaysOpen="False" Placement="Mouse" MaxWidth="400" AllowsTransparency="True" >
+                    <Border Style="{StaticResource PopupItemBorderStyle}">
+                        <TextBlock Style="{StaticResource PopupTextBlock}">Неправильный логин или пароль</TextBlock>
+                    </Border>
+                </Popup>
+                
             </StackPanel>
 
         </Border>
