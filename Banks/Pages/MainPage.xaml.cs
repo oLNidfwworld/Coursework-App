@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Banks.Clasess.Models;
 
 namespace Banks.Pages
 {
@@ -23,6 +24,7 @@ namespace Banks.Pages
         public MainPage()
         {
             InitializeComponent();
+            DataContext = new ClientsModel();
         }
     }
 }

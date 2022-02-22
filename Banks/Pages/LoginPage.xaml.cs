@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Banks.Clasess;
+using Banks.Clasess.Models;
 
 namespace Banks.Pages
 {
@@ -26,7 +28,25 @@ namespace Banks.Pages
 
         }
 
-        
+        private void LoginButton(object sender, RoutedEventArgs e)
+        {
+            var user = DatabaseModel.db.NamesClients.First(x => (x.login == loginTextBox.Text && x.password == passwordBox.Password));
+            
+            if ( user ==null)
+            {
+                warningPopup.IsOpen = true;
+            }
+            else
+            {
+                ClientsModel.Login = user.login;
+                ClientsModel.Password = user.password;
+                ClientsModel.Fullname = user.fname;
+                ClientsModel.id_name = user.id;
+                ClientsModel.Adress = user.adress;
+                MainFrameModel.thisframe.Navigate(new MainPage());
+            }
+        }
+
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {

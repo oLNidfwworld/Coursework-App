@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:modelClient="clr-namespace:Banks.Clasess.Models"
       xmlns:local="clr-namespace:Banks.Pages"
       mc:Ignorable="d" 
       Title="MainPage">
@@ -22,7 +23,13 @@
                     <ColumnDefinition Width="5*"></ColumnDefinition>
                     <ColumnDefinition Width="5*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <TextBlock x:Name="helloPrint" Grid.ColumnSpan="2">Здравствуйте!</TextBlock>
+
+                <Border Grid.ColumnSpan="2" Style="{StaticResource ItemsBorderStyle}">
+                    <Grid>
+                        <TextBlock x:Name="helloPrint" Grid.ColumnSpan="2">Здравствуйте!</TextBlock>
+                        <TextBlock Text="{Binding Fullname}" Margin="218,10,10,10"></TextBlock>
+                    </Grid>
+                </Border>
                 
                 <Button Grid.Column="0" Grid.Row="1"  >
                     <TextBlock>История транзакций</TextBlock>

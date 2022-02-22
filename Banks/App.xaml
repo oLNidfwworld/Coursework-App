@@ -108,7 +108,7 @@
             <Style x:Key="HeaderBorderStyle" TargetType="Border">
                 <Setter Property="BorderThickness" Value="0"></Setter>
                 <Setter Property="Margin" Value="0"></Setter>
-                <Setter Property="CornerRadius" Value="20,20,0,0"></Setter>
+                <Setter Property="CornerRadius" Value="0"></Setter>
             </Style>
 
             <!-- Стиль обрамлений элементов-->

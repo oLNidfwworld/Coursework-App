@@ -11,4 +11,9 @@ namespace Banks.Clasess
     {
         public static Frame thisframe;
     }
+    
+    internal static class DatabaseModel
+    {
+        public static Banks.Database.BanksEntities db = new Database.BanksEntities();
+    }
 }

@@ -81,6 +81,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Clasess\MainFrameModel.cs" />
+    <Compile Include="Clasess\Models\ClientsModel.cs" />
     <Compile Include="Database\Bank.cs">
       <DependentUpon>BanksModel.tt</DependentUpon>
     </Compile>
