@@ -16,28 +16,13 @@ using System.Windows.Shapes;
 namespace Banks.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для LoginPage.xaml
+    /// Логика взаимодействия для MainPage.xaml
     /// </summary>
-    public partial class LoginPage : Page
+    public partial class MainPage : Page
     {
-        public LoginPage()
+        public MainPage()
         {
             InitializeComponent();
-            
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("ЬЫП");
-        }
-
-        private void Button_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            
-        }
-
-        private void ent_MouseEnter(object sender, MouseEventArgs e)
-        {
         }
     }
 }

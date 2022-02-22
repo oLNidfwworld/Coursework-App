@@ -1,0 +1,49 @@
+﻿<Page x:Class="Banks.Pages.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Banks.Pages"
+      mc:Ignorable="d" 
+      Title="MainPage">
+
+    <Grid>
+        <Border Style="{StaticResource MainBorderStyle}">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="helloPrint" Grid.ColumnSpan="2">Здравствуйте!</TextBlock>
+                
+                <Button Grid.Column="0" Grid.Row="1"  >
+                    <TextBlock>История транзакций</TextBlock>
+                </Button>
+                <Button Grid.Column="1" Grid.Row="1">
+                    <TextBlock>Оформить карту банка</TextBlock>
+                </Button>
+                <Button Grid.Column="0" Grid.Row="2">
+                    <TextBlock>Перевести/оплатить</TextBlock>
+                </Button>
+                <Button Grid.Column="1" Grid.Row="2">
+                    <TextBlock>Снять наличные</TextBlock>
+                </Button>
+                <Button Grid.Column="0" Grid.Row="3">
+                    <TextBlock>Посмотреть баланс</TextBlock>
+                </Button>
+                <Button Grid.Column="1" Grid.Row="3">
+                    <TextBlock>Инфо</TextBlock>
+                </Button>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

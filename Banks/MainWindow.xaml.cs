@@ -17,11 +17,16 @@ using System.Windows.Shapes;
 
 namespace Banks
 {
+
+    
+
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+       
+
         public MainWindow()
         {
             InitializeComponent();
@@ -39,7 +44,13 @@ namespace Banks
         {
 
             MainFrameModel.thisframe = MainFrame;
-            MainFrameModel.thisframe.Navigate(new LoginPage());
+            MainFrameModel.thisframe.Navigate(new MainPage());
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
+
