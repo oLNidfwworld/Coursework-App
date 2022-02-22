@@ -102,6 +102,9 @@
     <Compile Include="Database\Clients.cs">
       <DependentUpon>BanksModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Database\NamesClients.cs">
+      <DependentUpon>BanksModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Database\Operation.cs">
       <DependentUpon>BanksModel.tt</DependentUpon>
     </Compile>

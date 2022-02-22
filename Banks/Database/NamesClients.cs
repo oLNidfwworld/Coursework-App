@@ -12,22 +12,21 @@ namespace Banks.Database
     using System;
     using System.Collections.Generic;
     
-    public partial class Clients
+    public partial class NamesClients
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Clients()
+        public NamesClients()
         {
-            this.Operation = new HashSet<Operation>();
+            this.Clients = new HashSet<Clients>();
         }
     
-        public int card_id { get; set; }
-        public Nullable<int> id_bank { get; set; }
-        public Nullable<int> id_name { get; set; }
-        public string cardnumber { get; set; }
+        public int id { get; set; }
+        public string fname { get; set; }
+        public string login { get; set; }
+        public string password { get; set; }
+        public string adress { get; set; }
     
-        public virtual Bank Bank { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Operation> Operation { get; set; }
-        public virtual NamesClients NamesClients { get; set; }
+        public virtual ICollection<Clients> Clients { get; set; }
     }
 }

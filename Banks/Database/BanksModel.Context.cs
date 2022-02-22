@@ -32,6 +32,7 @@ namespace Banks.Database
         public virtual DbSet<Operation> Operation { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Terminals> Terminals { get; set; }
+        public virtual DbSet<NamesClients> NamesClients { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище BanksModelSpace" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище BanksModelSpace" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Bank">
           <Key>
             <PropertyRef Name="id" />
@@ -18,9 +18,19 @@
             <PropertyRef Name="card_id" />
           </Key>
           <Property Name="card_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="fullName" Type="nvarchar" MaxLength="64" />
-          <Property Name="adress" Type="nvarchar" MaxLength="128" />
+          <Property Name="id_name" Type="int" />
+          <Property Name="cardnumber" Type="nvarchar" MaxLength="128" />
           <Property Name="id_bank" Type="int" />
+        </EntityType>
+        <EntityType Name="NamesClients">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="fname" Type="nvarchar" MaxLength="50" />
+          <Property Name="login" Type="nvarchar" MaxLength="16" />
+          <Property Name="password" Type="nvarchar" MaxLength="32" />
+          <Property Name="adress" Type="nvarchar" MaxLength="128" />
         </EntityType>
         <EntityType Name="Operation">
           <Key>
@@ -61,6 +71,18 @@
             </Principal>
             <Dependent Role="Clients">
               <PropertyRef Name="id_bank" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clients_NamesClients">
+          <End Role="NamesClients" Type="Self.NamesClients" Multiplicity="0..1" />
+          <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NamesClients">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="id_name" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -134,11 +156,16 @@
         <EntityContainer Name="Хранилище BanksModelSpaceContainer">
           <EntitySet Name="Bank" EntityType="Self.Bank" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NamesClients" EntityType="Self.NamesClients" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Operation" EntityType="Self.Operation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Terminals" EntityType="Self.Terminals" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Clients_Bank" Association="Self.FK_Clients_Bank">
             <End Role="Bank" EntitySet="Bank" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clients_NamesClients" Association="Self.FK_Clients_NamesClients">
+            <End Role="NamesClients" EntitySet="NamesClients" />
             <End Role="Clients" EntitySet="Clients" />
           </AssociationSet>
           <AssociationSet Name="FK_Operation_Clients" Association="Self.FK_Operation_Clients">
@@ -154,8 +181,7 @@
             <End Role="Terminals" EntitySet="Terminals" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BanksModelSpace" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -174,11 +200,12 @@
             <PropertyRef Name="card_id" />
           </Key>
           <Property Name="card_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="fullName" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="adress" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="id_bank" Type="Int32" />
           <NavigationProperty Name="Bank" Relationship="Self.FK_Clients_Bank" FromRole="Clients" ToRole="Bank" />
           <NavigationProperty Name="Operation" Relationship="Self.FK_Operation_Clients" FromRole="Clients" ToRole="Operation" />
+          <Property Name="id_name" Type="Int32" />
+          <Property Name="cardnumber" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NamesClients" Relationship="BanksModelSpace.FK_Clients_NamesClients" FromRole="Clients" ToRole="NamesClients" />
         </EntityType>
         <EntityType Name="Operation">
           <Key>
@@ -314,7 +341,35 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="NamesClients" EntityType="BanksModelSpace.NamesClients" />
+          <AssociationSet Name="FK_Clients_NamesClients" Association="BanksModelSpace.FK_Clients_NamesClients">
+            <End Role="NamesClients" EntitySet="NamesClients" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="NamesClients">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="login" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="adress" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Clients" Relationship="BanksModelSpace.FK_Clients_NamesClients" FromRole="NamesClients" ToRole="Clients" />
+        </EntityType>
+        <Association Name="FK_Clients_NamesClients">
+          <End Type="BanksModelSpace.NamesClients" Role="NamesClients" Multiplicity="0..1" />
+          <End Type="BanksModelSpace.Clients" Role="Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NamesClients">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="id_name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -333,9 +388,9 @@
           <EntitySetMapping Name="Clients">
             <EntityTypeMapping TypeName="BanksModelSpace.Clients">
               <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="cardnumber" ColumnName="cardnumber" />
+                <ScalarProperty Name="id_name" ColumnName="id_name" />
                 <ScalarProperty Name="card_id" ColumnName="card_id" />
-                <ScalarProperty Name="fullName" ColumnName="fullName" />
-                <ScalarProperty Name="adress" ColumnName="adress" />
                 <ScalarProperty Name="id_bank" ColumnName="id_bank" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -380,6 +435,17 @@
           <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище BanksModelSpace.sp_helpdiagrams" />
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище BanksModelSpace.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище BanksModelSpace.sp_upgraddiagrams" />
+          <EntitySetMapping Name="NamesClients">
+            <EntityTypeMapping TypeName="BanksModelSpace.NamesClients">
+              <MappingFragment StoreEntitySet="NamesClients">
+                <ScalarProperty Name="adress" ColumnName="adress" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
