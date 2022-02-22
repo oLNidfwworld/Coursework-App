@@ -23,18 +23,14 @@ namespace Banks.Pages
         public LoginPage()
         {
             InitializeComponent();
-            
+
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("ЬЫП");
-        }
-
+        
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            wariningPopup.IsOpen = true;
+            warningPopup.IsOpen = true;
         }
     }
 }
