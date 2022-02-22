@@ -4,126 +4,150 @@
              xmlns:md ="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:Banks"
              StartupUri="MainWindow.xaml">
+    
+    
     <Application.Resources>
-        <FontFamily x:Key="Ubuntu">./Resources/Ubuntu-Regular.ttf#Ubuntu</FontFamily>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <FontFamily x:Key="Ubuntu">./Resources/Ubuntu-Regular.ttf#Ubuntu</FontFamily>
 
 
-        <!-- Стиль текста заголовка-->
-        <Style x:Key="HeaderText" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="{StaticResource Ubuntu}"></Setter>
-            <Setter Property="FontStyle" Value="Italic"></Setter>
-            <Setter Property="Foreground" Value="White" ></Setter>
-            <Setter Property="FontSize" Value="100" ></Setter>
-        </Style>
+            <!-- Стиль текста заголовка-->
+            <Style x:Key="HeaderText" TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="{StaticResource Ubuntu}"></Setter>
+                <Setter Property="FontStyle" Value="Italic"></Setter>
+                <Setter Property="Foreground" Value="White" ></Setter>
+                <Setter Property="FontSize" Value="100" ></Setter>
+            </Style>
 
-        <!-- Стандартный текст-->
-        <Style  TargetType="TextBlock" BasedOn="{StaticResource HeaderText}">
+            <!-- Стандартный текст-->
+            <Style  TargetType="TextBlock" BasedOn="{StaticResource HeaderText}">
 
-            <Setter Property="FontSize" Value="30"></Setter>
-            <Setter Property="FontStyle" Value="Normal"></Setter>
-            <Setter Property="Margin" Value="10"></Setter>
-
-        </Style>
-
-        <!-- Стиль текстбокса-->
-        <Style TargetType="TextBox" >
-
-            <Setter Property="FontFamily" Value="{StaticResource Ubuntu}"></Setter>
-            <Setter Property="FontStyle" Value="Normal"></Setter>
-            <Setter Property="Foreground" Value="White" ></Setter>
-            <Setter Property="FontSize" Value="30"></Setter>
-
-            <Setter Property="MinWidth" Value="150"></Setter>
-            <Setter Property="Margin" Value="10"></Setter>
-            <Setter Property="md:HintAssist.IsFloating" Value="True"></Setter>
-            <Setter Property="md:HintAssist.Foreground" Value="Wheat"></Setter>
-            <Setter Property="BorderThickness" Value="0,0,0,3"></Setter>
-            <Setter Property="Background" Value="Transparent"></Setter>
-        </Style>
-
-        <!-- Стиль всех кнопок-->
-        <Style  TargetType="Button">
-            <Style.Setters>
+                <Setter Property="FontSize" Value="30"></Setter>
+                <Setter Property="FontStyle" Value="Normal"></Setter>
                 <Setter Property="Margin" Value="10"></Setter>
-                <Setter Property="BorderThickness" Value="0"></Setter>
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="Button">
-                            <Border CornerRadius="15" BorderThickness="5"
-                                Background="{TemplateBinding Background}">
-                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Setter.Value>
 
-                </Setter>
+            </Style>
 
-                <Setter Property="Background" Value="#FF10BB10"></Setter>
-            </Style.Setters>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Template" >
+            <!-- Стиль текстбокса-->
+            <Style TargetType="TextBox" BasedOn="{StaticResource MaterialDesignTextBox}" >
+
+                <Setter Property="FontFamily" Value="{StaticResource Ubuntu}"></Setter>
+                <Setter Property="FontStyle" Value="Normal"></Setter>
+                <Setter Property="Foreground" Value="White" ></Setter>
+                <Setter Property="FontSize" Value="30"></Setter>
+
+                <Setter Property="MinWidth" Value="150"></Setter>
+                <Setter Property="Margin" Value="10"></Setter>
+                <Setter Property="md:HintAssist.IsFloating" Value="False"></Setter>
+                <Setter Property="md:HintAssist.Foreground" Value="Wheat"></Setter>
+                <Setter Property="BorderThickness" Value="0,0,0,3"></Setter>
+                <Setter Property="Background" Value="Transparent"></Setter>
+            </Style>
+
+            <Style TargetType="PasswordBox" BasedOn="{StaticResource MaterialDesignPasswordBox}">
+                <Setter Property="FontFamily" Value="{StaticResource Ubuntu}"></Setter>
+                <Setter Property="FontStyle" Value="Normal"></Setter>
+                <Setter Property="Foreground" Value="White" ></Setter>
+                <Setter Property="FontSize" Value="30"></Setter>
+                <Setter Property="MinWidth" Value="150"></Setter>
+                <Setter Property="Margin" Value="10"></Setter>
+                <Setter Property="md:HintAssist.IsFloating" Value="False"></Setter>
+                <Setter Property="md:HintAssist.Foreground" Value="Wheat"></Setter>
+                <Setter Property="BorderThickness" Value="0,0,0,3"></Setter>
+                <Setter Property="Background" Value="Transparent"></Setter>
+            </Style>
+            <!-- Стиль всех кнопок-->
+            <Style  TargetType="Button">
+                <Style.Setters>
+                    <Setter Property="Margin" Value="10"></Setter>
+                    <Setter Property="BorderThickness" Value="0"></Setter>
+                    <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="Button">
-                                <Border BorderThickness="5" BorderBrush="White" CornerRadius="15"
-                                        Background="{TemplateBinding Background}">
+                                <Border CornerRadius="15" BorderThickness="5"
+                                Background="{TemplateBinding Background}">
                                     <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                                 </Border>
                             </ControlTemplate>
                         </Setter.Value>
+
                     </Setter>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
 
-        <!-- Стиль главных бордеров-->
-        <Style x:Key="MainBorderStyle" TargetType="Border">
+                    <Setter Property="Background" Value="#FF10BB10"></Setter>
+                </Style.Setters>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Template" >
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border BorderThickness="5" BorderBrush="White" CornerRadius="15"
+                                        Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
 
-            <Setter Property="CornerRadius" Value="100"></Setter>
-            <Setter Property="Margin" Value="10"></Setter>
-            <Setter Property="BorderThickness" Value="10"></Setter>
-        </Style>
-        <!-- Стиль головного бордера-->
-        <Style x:Key="HeaderBorderStyle" TargetType="Border">
-            <Setter Property="BorderThickness" Value="0"></Setter>
-            <Setter Property="Margin" Value="0"></Setter>
-            <Setter Property="CornerRadius" Value="90,90,0,0"></Setter>
-        </Style>
+            <!-- Стиль главных бордеров-->
+            <Style x:Key="MainBorderStyle" TargetType="Border">
 
-        <!-- Стиль обрамлений элементов-->
-        <Style x:Key="ItemsBorderStyle" TargetType="Border" BasedOn="{StaticResource MainBorderStyle}">
+                <Setter Property="CornerRadius" Value="10,30,10,30"></Setter>
+                <Setter Property="Margin" Value="10"></Setter>
+                <Setter Property="BorderThickness" Value="10"></Setter>
+            </Style>
+            <!-- Стиль головного бордера-->
+            <Style x:Key="HeaderBorderStyle" TargetType="Border">
+                <Setter Property="BorderThickness" Value="0"></Setter>
+                <Setter Property="Margin" Value="0"></Setter>
+                <Setter Property="CornerRadius" Value="20,20,0,0"></Setter>
+            </Style>
 
-            <Setter Property="CornerRadius" Value="15"></Setter>
-            <Setter Property="Background" Value="#FF10BB10"></Setter>
-            <Setter Property="BorderThickness" Value="0"></Setter>
-        </Style>
+            <!-- Стиль обрамлений элементов-->
+            <Style x:Key="ItemsBorderStyle" TargetType="Border" BasedOn="{StaticResource MainBorderStyle}">
 
-        <!-- Стиль обрамлений попапов-->
-        <Style x:Key="PopupItemBorderStyle" TargetType="Border" BasedOn="{StaticResource ItemsBorderStyle}">
+                <Setter Property="CornerRadius" Value="15"></Setter>
+                <Setter Property="Background" Value="#FF10BB10"></Setter>
+                <Setter Property="BorderThickness" Value="0"></Setter>
+            </Style>
 
-            <Setter Property="Margin" Value="0"></Setter>
-            <Setter Property="BorderBrush" Value="Red"></Setter>
-            <Setter Property="BorderThickness" Value="3"></Setter>
-            <Setter Property="Background" Value="GhostWhite"></Setter>
-        </Style>
+            <!-- Стиль обрамлений попапов-->
+            <Style x:Key="PopupItemBorderStyle" TargetType="Border" BasedOn="{StaticResource ItemsBorderStyle}">
 
-        <!-- Стиль текста попапов-->
-        <Style x:Key="PopupTextBlock" TargetType="TextBlock" >
-            <Setter Property="FontSize" Value="20"></Setter>
-            <Setter Property="FontStyle" Value="Normal"></Setter>
-            <Setter Property="Margin" Value="10"></Setter>
-            <Setter Property="Foreground" Value="Red"></Setter>
-            <Setter Property="Background" Value="GhostWhite"></Setter>
-            <Setter Property="TextWrapping" Value="Wrap"></Setter>
-        </Style>
+                <Setter Property="Margin" Value="0"></Setter>
+                <Setter Property="BorderBrush" Value="Red"></Setter>
+                <Setter Property="BorderThickness" Value="3"></Setter>
+                <Setter Property="Background" Value="GhostWhite"></Setter>
+            </Style>
 
-        <!-- Стиль страницы-->
-        <Style TargetType="Page">
-            <Setter Property="Width" Value="1410"></Setter>
-            <Setter Property="Height" Value="645"></Setter>
-        </Style>
+            <!-- Стиль текста попапов-->
+            <Style x:Key="PopupTextBlock" TargetType="TextBlock" >
+                <Setter Property="FontSize" Value="20"></Setter>
+                <Setter Property="FontStyle" Value="Normal"></Setter>
+                <Setter Property="Margin" Value="10"></Setter>
+                <Setter Property="Foreground" Value="Red"></Setter>
+                <Setter Property="Background" Value="GhostWhite"></Setter>
+                <Setter Property="TextWrapping" Value="Wrap"></Setter>
+            </Style>
 
+            <!-- Стиль страницы-->
+            <Style TargetType="Page">
+                <Setter Property="Width" Value="1410"></Setter>
+                <Setter Property="Height" Value="645"></Setter>
+            </Style>
+
+
+        </ResourceDictionary>
+
+
+        
     </Application.Resources>
 </Application>

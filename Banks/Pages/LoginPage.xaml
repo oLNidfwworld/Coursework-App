@@ -18,22 +18,16 @@
                     <TextBlock HorizontalAlignment="Center">Вход</TextBlock>
                 </Border>
                 <Border  Style="{StaticResource ItemsBorderStyle}" >
-                    <DockPanel MinWidth="500" MaxWidth="500"  >
-                        <TextBlock DockPanel.Dock="Left">Логин:</TextBlock>
-                        <TextBox DockPanel.Dock="Right" MaxWidth="300" md:HintAssist.Hint="asdasd">
-                            <TextBox.ToolTip>
-                                <ToolTip Background="Transparent">
-                                    <TextBlock>Dick</TextBlock>
-                                </ToolTip>
-                            </TextBox.ToolTip>
-                        </TextBox>
+                    <DockPanel  MinWidth="500" MaxWidth="500"  >
+                        <md:PackIcon Foreground="White"  DockPanel.Dock="Left" Kind="Account" Height="85" Width="100"></md:PackIcon>
+                        <TextBox  DockPanel.Dock="Left"  MaxWidth="500" md:HintAssist.Hint="Введите логин" Width="303" />
 
                     </DockPanel>
                 </Border>
                 <Border  Style="{StaticResource ItemsBorderStyle}" >
                     <DockPanel  MinWidth="500" MaxWidth="500"  >
-                        <TextBlock DockPanel.Dock="Left">Пароль:</TextBlock>
-                        <TextBox MaxLines="1" MaxWidth="300" DockPanel.Dock="Right" ></TextBox>
+                        <md:PackIcon Foreground="White" Kind="Password" DockPanel.Dock="Left" Height="85" Width="100"></md:PackIcon>
+                        <PasswordBox  MaxWidth="300" DockPanel.Dock="Left" md:HintAssist.Hint="Введите пароль" Width="303" />
 
                     </DockPanel>
                 </Border>

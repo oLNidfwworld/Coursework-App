@@ -26,11 +26,7 @@ namespace Banks.Pages
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("ЬЫП");
-        }
-
+        
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
