@@ -44,7 +44,7 @@ namespace Banks
         {
 
             MainFrameModel.thisframe = MainFrame;
-            MainFrameModel.thisframe.Navigate(new MainPage());
+            MainFrameModel.thisframe.Navigate(new LoginPage());
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
