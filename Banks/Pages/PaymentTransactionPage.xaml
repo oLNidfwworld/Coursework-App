@@ -1,0 +1,24 @@
+﻿<Page x:Class="Banks.Pages.PaymentTransactionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Banks.Pages"
+      xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      Title="PaymentTransactionPage">
+
+    <Grid>
+        <Border Style="{StaticResource MainBorderStyle}"  >
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+                <Border Style="{StaticResource ItemsBorderStyle}">
+                    <StackPanel>
+
+                            <TextBlock>На какой счет переводить</TextBlock>
+                        <TextBox MinWidth="" md:HintAssist.Hint="Сумма в рублях" Width="682"></TextBox>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
