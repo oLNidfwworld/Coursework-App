@@ -4,8 +4,8 @@
              xmlns:md ="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:Banks"
              StartupUri="MainWindow.xaml">
-    
-    
+
+
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -148,6 +148,6 @@
         </ResourceDictionary>
 
 
-        
+
     </Application.Resources>
 </Application>
