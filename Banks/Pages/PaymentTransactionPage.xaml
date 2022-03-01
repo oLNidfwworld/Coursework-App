@@ -11,13 +11,25 @@
     <Grid>
         <Border Style="{StaticResource MainBorderStyle}"  >
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
-                <Border Style="{StaticResource ItemsBorderStyle}">
-                    <StackPanel>
+                
+                    
+                    <Border Style="{StaticResource ItemsBorderStyle}">
+                        <StackPanel>
+                            <TextBlock HorizontalAlignment="Center">На какой счет переводить</TextBlock>
+                            <TextBox  HorizontalContentAlignment="Center" md:HintAssist.Hint="Номер счета" Width="682"></TextBox>
+                        </StackPanel>
+                    </Border>
 
-                            <TextBlock>На какой счет переводить</TextBlock>
-                        <TextBox MinWidth="" md:HintAssist.Hint="Сумма в рублях" Width="682"></TextBox>
-                    </StackPanel>
-                </Border>
+                    <Border Style="{StaticResource ItemsBorderStyle}">
+                        <StackPanel>
+
+                            <TextBlock HorizontalAlignment="Center" >Сумма перевода</TextBlock>
+                            <TextBox  HorizontalContentAlignment="Center" md:HintAssist.Hint="Сумма в рублях" Width="682"></TextBox>
+                        </StackPanel>
+                    </Border>
+                    <Button>Перевести</Button>
+                    
+                
             </StackPanel>
         </Border>
     </Grid>
