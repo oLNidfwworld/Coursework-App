@@ -37,7 +37,7 @@
                     <TextBlock>Снять наличные</TextBlock>
                 </Button>
                 <Button Grid.Column="0" Grid.Row="3">
-                    <TextBlock>Посмотреть баланс</TextBlock>
+                    <TextBlock>Посмотреть баланс <LineBreak/> и историю транзакция</TextBlock>
                 </Button>
                 <Button Grid.Column="1" Grid.Row="3">
                     <TextBlock>Инфо</TextBlock>
