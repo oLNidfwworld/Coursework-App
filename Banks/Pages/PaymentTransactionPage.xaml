@@ -14,10 +14,18 @@
                 <Border Style="{StaticResource ItemsBorderStyle}">
                     <StackPanel>
 
-                            <TextBlock>На какой счет переводить</TextBlock>
-                        <TextBox MinWidth="" md:HintAssist.Hint="Сумма в рублях" Width="682"></TextBox>
+                        <TextBlock>На какой счет переводить</TextBlock>
+                        <TextBox  md:HintAssist.Hint="1234 1234 1234 1234" Width="682"></TextBox>
                     </StackPanel>
                 </Border>
+                <Border Style="{StaticResource ItemsBorderStyle}">
+                    <StackPanel>
+
+                        <TextBlock>Сумма</TextBlock>
+                        <TextBox  md:HintAssist.Hint="В Рублях" Width="682"></TextBox>
+                    </StackPanel>
+                </Border>
+                <Button Content="Перевести" Width="440"/>
             </StackPanel>
         </Border>
     </Grid>

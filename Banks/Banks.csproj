@@ -88,6 +88,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\WithdrawPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\LoginPage.xaml.cs">
@@ -98,6 +102,9 @@
     </Compile>
     <Compile Include="Pages\PaymentTransactionPage.xaml.cs">
       <DependentUpon>PaymentTransactionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WithdrawPage.xaml.cs">
+      <DependentUpon>WithdrawPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

@@ -144,7 +144,13 @@
                 <Setter Property="Height" Value="645"></Setter>
             </Style>
 
-
+            <Style TargetType="ComboBox" BasedOn="{StaticResource MaterialDesignComboBox}">
+                <Setter Property="FontFamily" Value="{StaticResource Ubuntu}"></Setter>
+                <Setter Property="FontStyle" Value="Normal"></Setter>
+                <Setter Property="Foreground" Value="White" ></Setter>
+                <Setter Property="FontSize" Value="30"></Setter>
+                <Setter Property="Background" Value="#FF10BB10" ></Setter>
+            </Style>
         </ResourceDictionary>
 
 
