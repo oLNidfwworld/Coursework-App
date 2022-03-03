@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Banks.Pages"
       mc:Ignorable="d" 
+      Style="{StaticResource AllPages}"
       Title="MainPage">
 
     <Grid>
@@ -24,10 +25,8 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock x:Name="helloPrint" Grid.ColumnSpan="2">Здравствуйте!</TextBlock>
                 
-                <Button Grid.Column="0" Grid.Row="1"  >
-                    <TextBlock>История транзакций</TextBlock>
-                </Button>
-                <Button Grid.Column="1" Grid.Row="1">
+                
+                <Button Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
                     <TextBlock>Оформить карту банка</TextBlock>
                 </Button>
                 <Button Grid.Column="0" Grid.Row="2">

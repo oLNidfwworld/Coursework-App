@@ -44,7 +44,7 @@ namespace Banks
         {
 
             MainFrameModel.thisframe = MainFrame;
-            MainFrameModel.thisframe.Navigate(new WithdrawPage());
+            MainFrameModel.thisframe.Navigate(new BalanceCheckOut());
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -6,6 +6,7 @@
       xmlns:local="clr-namespace:Banks.Pages"
       xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
+      Style="{StaticResource AllPages}"
       Title="PaymentTransactionPage">
 
     <Grid>
@@ -23,10 +24,12 @@
                     <Border Style="{StaticResource ItemsBorderStyle}">
                         <StackPanel>
 
-                            <TextBlock>На какой счет переводить</TextBlock>
-                        <TextBox MinWidth="" md:HintAssist.Hint="Сумма в рублях" Width="682"></TextBox>
+                        <TextBlock HorizontalAlignment="Center">Сумма перевода</TextBlock>
+                        <TextBox HorizontalContentAlignment="Center" md:HintAssist.Hint="В рублях" Width="682"></TextBox>
                     </StackPanel>
                 </Border>
+
+                <Button Width="469">Перевести</Button>
             </StackPanel>
         </Border>
     </Grid>

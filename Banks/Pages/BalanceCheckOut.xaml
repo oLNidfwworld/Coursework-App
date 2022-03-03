@@ -4,14 +4,75 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Banks.Pages"
+      xmlns:md ="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
+      Style="{StaticResource AllPages}"
       Title="BalanceCheckOut">
 
     <Grid>
-        <Grid>
-            <Border Style="{StaticResource MainBorderStyle}"  >
-                
-            </Border>
-        </Grid>
+        <Border Style="{StaticResource MainBorderStyle}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="118*"></RowDefinition>
+                    <RowDefinition Height="106*"></RowDefinition>
+                    <RowDefinition Height="381*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150*"></ColumnDefinition>
+                    <ColumnDefinition Width="268*"></ColumnDefinition>
+                    <ColumnDefinition Width="267*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Grid.Row="0" Style="{StaticResource ItemsBorderStyle}">
+                    <TextBlock  >Выберите карту</TextBlock>
+                </Border>
+                <Border Grid.Column="1" Grid.Row="0" Style="{StaticResource ItemsBorderStyle}" >
+                    <ComboBox  Margin="10">
+                        <ComboBoxItem>Номер 1</ComboBoxItem>
+                        <ComboBoxItem>Номер 2</ComboBoxItem>
+                        <ComboBoxItem>Номер 3</ComboBoxItem>
+                    </ComboBox>
+                </Border>
+
+                <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource ItemsBorderStyle}" >
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock>Текущий баланс:</TextBlock>
+                            <TextBlock>Биндинг</TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+
+                <Border Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource ItemsBorderStyle}" >
+                    <ScrollViewer HorizontalScrollBarVisibility="Visible"  >
+                        
+                        <StackPanel>
+                            <Border BorderBrush="White" BorderThickness="10" Style="{StaticResource ItemsBorderStyle}">
+                                <StackPanel>
+                                    <TextBlock>Кому</TextBlock>
+                                    <TextBlock>Когда</TextBlock>
+                                    <TextBlock>Сколько</TextBlock>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderBrush="White" BorderThickness="10" Style="{StaticResource ItemsBorderStyle}">
+                                <StackPanel>
+                                    <TextBlock>Кому</TextBlock>
+                                    <TextBlock>Когда</TextBlock>
+                                    <TextBlock>Сколько</TextBlock>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderBrush="White" BorderThickness="10" Style="{StaticResource ItemsBorderStyle}">
+                                <StackPanel>
+                                    <TextBlock>Кому</TextBlock>
+                                    <TextBlock>Когда</TextBlock>
+                                    <TextBlock>Сколько</TextBlock>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Border>
+
+            </Grid>
+        </Border>
     </Grid>
 </Page>

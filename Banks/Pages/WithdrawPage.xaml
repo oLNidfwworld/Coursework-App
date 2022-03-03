@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:Banks.Pages"
       xmlns:md ="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      Width="1410" Height="645"
+      
+      Style="{StaticResource AllPages}"
       Title="WithdrawPage">
 
     <Grid>

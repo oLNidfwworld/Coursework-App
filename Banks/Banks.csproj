@@ -92,6 +92,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\RegistationNewCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\WithdrawPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -109,6 +113,9 @@
     </Compile>
     <Compile Include="Pages\PaymentTransactionPage.xaml.cs">
       <DependentUpon>PaymentTransactionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegistationNewCard.xaml.cs">
+      <DependentUpon>RegistationNewCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\WithdrawPage.xaml.cs">
       <DependentUpon>WithdrawPage.xaml</DependentUpon>

@@ -7,6 +7,8 @@
       xmlns:local="clr-namespace:Banks.Pages"
       xmlns:main ="clr-namespace:Banks"
       mc:Ignorable="d" 
+      
+      Style="{StaticResource AllPages}"
       Title="LoginPage">
 
     <Grid >
