@@ -16,6 +16,9 @@ Login pages </br>
 ![Login page](https://github.com/oLNidfwworld/BankApp/blob/master/Screenshots/Login1.png)
 ![Login 2nd step page](https://github.com/oLNidfwworld/BankApp/blob/master/Screenshots/Login2.png)
 
+Main page </br>
+![Main page](https://github.com/oLNidfwworld/BankApp/blob/master/Screenshots/Main.png)
+
 Registration page </br>
 ![Regisration page](https://github.com/oLNidfwworld/BankApp/blob/master/Screenshots/Registrn.png)
 
