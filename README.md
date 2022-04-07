@@ -12,24 +12,24 @@ no build for ios yet
 
 ## Individual Screenshots
 
-Login pages <\br>
+Login pages </br>
 ![Login page](https://github.com/oLNidfwworld/BankApp/blob/master/Screenshots/Login1.png)
 ![Login 2nd step page](https://github.com/oLNidfwworld/BankApp/blob/master/Screenshots/Login2.png)
 
-Registration page <\br>
+Registration page </br>
 ![Regisration page](https://github.com/oLNidfwworld/BankApp/blob/master/Screenshots/Registrn.png)
 
-PayTo pages <\br>
+PayTo pages </br>
 ![PayTo page](https://github.com/oLNidfwworld/BankApp/blob/master/Screenshots/PayTi.png)
 ![PayTo 2nd step page](https://github.com/oLNidfwworld/BankApp/blob/master/Screenshots/PayTi2.png)
 
-Registrations new card page<\br>
+Registrations new card page</br>
 ![Registration new card page](https://github.com/oLNidfwworld/BankApp/blob/master/Screenshots/RegC.png)
 
-Replenish page <\br>
+Replenish page </br>
 ![Replenish page](https://github.com/oLNidfwworld/BankApp/blob/master/Screenshots/Transaction1.png)
 
-Transactions history page <\br>
+Transactions history page </br>
 ![Transactions history page](https://github.com/oLNidfwworld/BankApp/blob/master/Screenshots/History.png)
 
 
