@@ -12,7 +12,7 @@ no build for ios yet
 
 ## Individual Screenshots
 
-<bold> Login pages </bold></br>
+Login pages </br>
 ![Login page](https://github.com/oLNidfwworld/BankApp/blob/master/Screenshots/Login1.png)
 ![Login 2nd step page](https://github.com/oLNidfwworld/BankApp/blob/master/Screenshots/Login2.png)
 
